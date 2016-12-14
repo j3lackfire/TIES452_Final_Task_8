@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="org.semarglproject:semargl-jena:0.7" type="repository">
+    <properties maven-id="org.semarglproject:semargl-jena:0.7" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/semargl-jena-0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/semargl-core-0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/semargl-rdfa-0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/semargl-rdf-0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jena-core-2.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jena-iri-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xml-apis-1.4.01.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

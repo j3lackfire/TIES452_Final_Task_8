@@ -1,0 +1,158 @@
+
+@prefix : <http://users.jyu.fi/~miduleph/TIES452/Individuals.owl#> .
+@prefix onto: <http://users.jyu.fi/~miduleph/TIES452/Final_Assignment.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:Accounting a owl:NamedIndividual , onto:Economics , onto:Skills.
+
+:Banking a owl:NamedIndividual , onto:Economics , onto:Skills.
+
+:BugFixxing a owl:NamedIndividual , onto:ComputerScience , onto:Skills.
+
+:Caring a owl:NamedIndividual , onto:Education , onto:Skills.
+
+:Coaching a owl:NamedIndividual , onto:ManagingSkill , onto:Skills.
+
+:Coding a owl:NamedIndividual , onto:ComputerScience , onto:Skills.
+
+:ComputerNetworking a owl:NamedIndividual , onto:ComputerScience , onto:Skills.
+
+:Finance a owl:NamedIndividual , onto:Economics , onto:Skills.
+
+:Inspiring a owl:NamedIndividual , onto:ManagingSkill , onto:Skills.
+
+:Singing a owl:NamedIndividual , onto:Education , onto:Skills.
+
+:Supervising a owl:NamedIndividual , onto:ManagingSkill , onto:Skills.
+
+:Teaching a owl:NamedIndividual , onto:Education , onto:Skills.
+
+
+
+:Brazil a owl:NamedIndividual , onto:American  , onto:Country .
+
+:China a owl:NamedIndividual , onto:Asia , onto:Country .
+
+:England a owl:NamedIndividual , onto:Europe , onto:Country .
+
+:Finland a owl:NamedIndividual , onto:Europe , onto:Country .
+
+:Germany a owl:NamedIndividual , onto:Europe , onto:Country .
+
+:Japan a owl:NamedIndividual , onto:Asia , onto:Country .
+
+:USA a owl:NamedIndividual , onto:American , onto:Country .
+
+:Vietnam a owl:NamedIndividual , onto:Asia , onto:Country .
+
+
+
+:Google a owl:NamedIndividual , onto:SoftwareCompany , onto:Infrastructure.
+
+:JAMK a owl:NamedIndividual , onto:University , onto:Infrastructure.
+
+:JYU a owl:NamedIndividual , onto:University , onto:Infrastructure.
+
+:JyvaskylaHospital a owl:NamedIndividual , onto:Hospital , onto:Infrastructure.
+
+:JyvaskylanKoulu a owl:NamedIndividual , onto:School , onto:Infrastructure.
+
+:Microsoft a owl:NamedIndividual , onto:SoftwareCompany , onto:Infrastructure.
+
+:Nordea a owl:NamedIndividual , onto:Bank , onto:Infrastructure.
+
+:OP a owl:NamedIndividual , onto:Bank , onto:Infrastructure.
+
+:Panda a owl:NamedIndividual , onto:Factory , onto:Infrastructure.
+
+:Jim a owl:NamedIndividual , onto:UnderagePerson , onto:Person ;
+onto:hasNationality :Germany ;
+onto:isLivingIn :Germany ;
+onto:hasName "Jimmy Hendrix"^^xsd:string ;
+onto:hasAge "12"^^xsd:integer ;
+onto:hasParent :Mary , :Eric ;
+onto:isMale "true"^^xsd:boolean .
+
+:Anna a owl:NamedIndividual , onto:UnderagePerson , onto:Person;
+onto:isLivingIn :Germany ;
+onto:hasNationality :China ;
+onto:hasName "Anna Annabelle"^^xsd:string ;
+onto:hasAge "3"^^xsd:integer ;
+onto:hasParent :Mary , :Eric ;
+onto:isMale "false"^^xsd:boolean .
+
+:Eric a owl:NamedIndividual , onto:WorkingAgePerson , onto:Person;
+onto:hasChildren :Jim , :Anna ;
+onto:hasSpouse :Mary ;
+onto:hasNationality :Finland ;
+onto:isLivingIn :Germany ;
+onto:hasSkill :Supervising , :Inspiring ;
+onto:isWorkingAt :Panda ;
+onto:hasAge "42"^^xsd:integer ;
+onto:hasName "Eric Clapton"^^xsd:string ;
+onto:isMale "true"^^xsd:boolean .
+
+:Mary a owl:NamedIndividual , onto:WorkingAgePerson , onto:Person;
+onto:hasChildren :Jim , :Anna ;
+onto:hasParent :Bill , :Maria ;
+onto:hasSpouse :Eric ;
+onto:hasNationality :China ;
+onto:isLivingIn :Germany ;
+onto:hasSkill :Supervising , :Inspiring ;
+onto:isWorkingAt :Nordea ;
+onto:hasAge "38"^^xsd:integer ;
+onto:hasName "Mary Jane"^^xsd:string ;
+onto:isMale "false"^^xsd:boolean .
+
+:Jack a owl:NamedIndividual , onto:UnderagePerson , onto:Person;
+onto:hasParent :Tom , :Jane ;
+onto:isLivingIn :Finland ;
+onto:hasNationality :Finland ;
+onto:hasName "Jack Sparrow"^^xsd:string ;
+onto:hasAge "4"^^xsd:integer ;
+onto:isMale "true"^^xsd:boolean .
+
+:Jane a owl:NamedIndividual , onto:WorkingAgePerson , onto:Person;
+onto:hasChildren :Jack ;
+onto:hasSpouse :Tom ;
+onto:hasName "Jane Sparrow"^^xsd:string ;
+onto:isLivingIn :Finland ;
+onto:hasNationality :Finland ;
+onto:hasAge "33"^^xsd:integer ;
+onto:isWorkingAt :JyvaskylanKoulu ;
+onto:hasSkill :Caring , :Singing;
+onto:isMale "false"^^xsd:boolean .
+
+:Tom a owl:NamedIndividual , onto:WorkingAgePerson , onto:Person;
+onto:hasChildren :Jack ;
+onto:hasParent :Bill , :Maria ;
+onto:hasSpouse :Jane ;
+onto:hasNationality :USA ;
+onto:hasSkill :Coding ;
+onto:isLivingIn :Finland ;
+onto:isWorkingAt :Google ;
+onto:hasAge "31"^^xsd:integer ;
+onto:hasName "Tom Sparrow"^^xsd:string ;
+onto:isMale "true"^^xsd:boolean .
+
+:Bill a owl:NamedIndividual , onto:RetiredAgePerson , onto:Person;
+onto:hasChildren :Tom , :Mary ;
+onto:hasSpouse :Maria ;
+onto:hasNationality :USA ;
+onto:hasSkill :Coding;
+onto:isLivingIn :Japan ;
+onto:hasAge "78"^^xsd:integer ;
+onto:hasName "Bill Gates"^^xsd:string ;
+onto:isMale "true"^^xsd:boolean .
+
+:Maria a owl:NamedIndividual , onto:RetiredAgePerson , onto:Person;
+onto:hasChildren :Tom , :Mary ;
+onto:hasSpouse :Bill ;
+onto:hasNationality :Japan ;
+onto:hasSkill :Caring , :Teaching ;
+onto:isLivingIn :Japan ;
+onto:hasAge "69"^^xsd:integer ;
+onto:hasName "Maria Ozawa"^^xsd:string ;
+onto:isMale "false"^^xsd:boolean .		

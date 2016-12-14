@@ -1,0 +1,788 @@
+@prefix : <http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasChildren
+
+:hasChildren a owl:ObjectProperty ;
+	owl:inverseOf :hasParent ;
+	rdfs:domain :Person ;
+	rdfs:range :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasCitizen
+
+:hasCitizen a owl:ObjectProperty ;
+	owl:inverseOf :hasNationality ;
+	rdfs:domain :Country ;
+	rdfs:range :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasImmigrants
+
+:hasImmigrants a owl:ObjectProperty ;
+	rdfs:domain :Country ;
+	rdfs:range :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasNationality
+
+:hasNationality a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Country .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasParent
+
+:hasParent a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasSkill
+
+:hasSkill a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Skills .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasSpouse
+
+:hasSpouse a owl:ObjectProperty ;
+	owl:inverseOf :hasSpouse ;
+	a owl:FunctionalProperty , owl:InverseFunctionalProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasTypeOfEmployment
+
+:hasTypeOfEmployment a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :TypeOfEmployment .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#isLivingIn
+
+:isLivingIn a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Country .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#isWorkingAt
+
+:isWorkingAt a owl:ObjectProperty ;
+	rdfs:domain :Person ;
+	rdfs:range :Infrastructure .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasAddress
+
+:hasAddress a owl:DatatypeProperty ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :Infrastructure ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasAddress rdfs:range xsd:string .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasAge
+
+:hasAge a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:integer .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasInternetWebPage
+
+:hasInternetWebPage a owl:DatatypeProperty ;
+	rdfs:range xsd:string .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasName
+
+:hasName a owl:DatatypeProperty ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Class ;
+	owl:unionOf _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first :Infrastructure ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasName rdfs:range xsd:string .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasNickName
+
+:hasNickName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#hasSlogan
+
+:hasSlogan a owl:DatatypeProperty ;
+	rdfs:domain :Infrastructure ;
+	rdfs:range xsd:string .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#isMale
+
+:isMale a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:boolean .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#American
+
+:American a owl:Class ;
+	rdfs:subClassOf :Country .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Asia
+
+:Asia a owl:Class ;
+	rdfs:subClassOf :Country .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Bank
+
+:Bank a owl:Class ;
+	rdfs:subClassOf :ServiceInfrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Banker
+
+:Banker a owl:Class ;
+	rdfs:subClassOf :WorkingAgePerson , _:genid7 .
+
+_:genid7 a owl:Restriction ;
+	owl:onProperty :isWorkingAt ;
+	owl:someValuesFrom :Bank .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#ComputerScience
+
+:ComputerScience a owl:Class ;
+	rdfs:subClassOf :Skills .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Country
+
+:Country a owl:Class .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Doctor
+
+:Doctor a owl:Class ;
+	rdfs:subClassOf :WorkingAgePerson , _:genid8 .
+
+_:genid8 a owl:Restriction ;
+	owl:onProperty :isWorkingAt ;
+	owl:someValuesFrom :Hospital .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Economics
+
+:Economics a owl:Class ;
+	rdfs:subClassOf :Skills .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Education
+
+:Education a owl:Class ;
+	rdfs:subClassOf :Skills .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#EducationInfrastructure
+
+:EducationInfrastructure a owl:Class ;
+	rdfs:subClassOf :Infrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Engineer
+
+:Engineer a owl:Class ;
+	rdfs:subClassOf :WorkingAgePerson , _:genid9 .
+
+_:genid9 a owl:Restriction ;
+	owl:onProperty :isWorkingAt ;
+	owl:someValuesFrom :Factory .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Europe
+
+:Europe a owl:Class ;
+	rdfs:subClassOf :Country .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Factory
+
+:Factory a owl:Class ;
+	rdfs:subClassOf :ProductivityInfrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#GoodPerson
+
+:GoodPerson a owl:Class ;
+	owl:equivalentClass _:genid10 .
+
+_:genid10 owl:intersectionOf _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first :KindHeartedPerson ;
+	rdf:rest _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first :SmartPerson ;
+	rdf:rest rdf:nil .
+
+_:genid10 a owl:Class .
+
+:GoodPerson rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Hospital
+
+:Hospital a owl:Class ;
+	rdfs:subClassOf :ServiceInfrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Infrastructure
+
+:Infrastructure a owl:Class .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#KindHeartedPerson
+
+:KindHeartedPerson a owl:Class ;
+	owl:equivalentClass _:genid13 .
+
+_:genid13 a owl:Class ;
+	owl:unionOf _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first :Doctor ;
+	rdf:rest _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first :Professor ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first :Teacher ;
+	rdf:rest rdf:nil .
+
+:KindHeartedPerson rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#ManagingSkill
+
+:ManagingSkill a owl:Class ;
+	rdfs:subClassOf :Skills .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#NormalPerson
+
+:NormalPerson a owl:Class ;
+	owl:equivalentClass _:genid17 .
+
+_:genid17 owl:intersectionOf _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first _:genid23 .
+
+_:genid23 a owl:Class ;
+	owl:complementOf :KindHeartedPerson .
+
+_:genid22 rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first _:genid21 .
+
+_:genid21 a owl:Class ;
+	owl:complementOf :SmartPerson .
+
+_:genid20 rdf:rest _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first _:genid19 .
+
+_:genid19 a owl:Class ;
+	owl:complementOf :WellRoundedPerson .
+
+_:genid18 rdf:rest rdf:nil .
+
+_:genid17 a owl:Class .
+
+:NormalPerson rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Person
+
+:Person a owl:Class .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#ProductivityInfrastructure
+
+:ProductivityInfrastructure a owl:Class ;
+	rdfs:subClassOf :Infrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Professor
+
+:Professor a owl:Class ;
+	rdfs:subClassOf :WorkingAgePerson , _:genid24 .
+
+_:genid24 a owl:Restriction ;
+	owl:onProperty :isWorkingAt ;
+	owl:someValuesFrom :University .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Programmer
+
+:Programmer a owl:Class ;
+	rdfs:subClassOf :WorkingAgePerson , _:genid25 .
+
+_:genid25 a owl:Restriction ;
+	owl:onProperty :isWorkingAt ;
+	owl:someValuesFrom :SoftwareCompany .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#RetiredAgePerson
+
+:RetiredAgePerson a owl:Class ;
+	rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#School
+
+:School a owl:Class ;
+	rdfs:subClassOf :EducationInfrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#ServiceInfrastructure
+
+:ServiceInfrastructure a owl:Class ;
+	rdfs:subClassOf :Infrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Skills
+
+:Skills a owl:Class .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#SmartPerson
+
+:SmartPerson a owl:Class ;
+	owl:equivalentClass _:genid26 .
+
+_:genid26 a owl:Class ;
+	owl:unionOf _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first :Doctor ;
+	rdf:rest _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first :Engineer ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first :Professor ;
+	rdf:rest _:genid27 .
+
+_:genid27 a rdf:List ;
+	rdf:first :Programmer ;
+	rdf:rest rdf:nil .
+
+:SmartPerson rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#SoftwareCompany
+
+:SoftwareCompany a owl:Class ;
+	rdfs:subClassOf :ProductivityInfrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Teacher
+
+:Teacher a owl:Class ;
+	rdfs:subClassOf :WorkingAgePerson , _:genid31 .
+
+_:genid31 a owl:Restriction ;
+	owl:onProperty :isWorkingAt ;
+	owl:someValuesFrom :School .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#TypeOfEmployment
+
+:TypeOfEmployment a owl:Class ;
+	owl:equivalentClass _:genid32 .
+
+_:genid32 a owl:Class ;
+	owl:oneOf _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first :FulltimeStudent ;
+	rdf:rest _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first :Unemployed ;
+	rdf:rest _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first :Worker ;
+	rdf:rest rdf:nil .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#UnderagePerson
+
+:UnderagePerson a owl:Class ;
+	rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#University
+
+:University a owl:Class ;
+	rdfs:subClassOf :EducationInfrastructure .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#WellRoundedPerson
+
+:WellRoundedPerson a owl:Class ;
+	owl:equivalentClass _:genid36 .
+
+_:genid36 a owl:Restriction ;
+	owl:onProperty :hasSkill ;
+	owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+	owl:onClass :Skills .
+
+:WellRoundedPerson rdfs:subClassOf :Person .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#WorkingAgePerson
+
+:WorkingAgePerson a owl:Class ;
+	rdfs:subClassOf :Person .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Accounting
+
+:Accounting a owl:NamedIndividual , :Economics .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Banking
+
+:Banking a owl:NamedIndividual , :Economics .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Brazil
+
+:Brazil a owl:NamedIndividual , :American ;
+	:hasName "Brazil"^^xsd:string .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#BugFixxing
+
+:BugFixxing a owl:NamedIndividual , :ComputerScience .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Caring
+
+:Caring a owl:NamedIndividual , :Education .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#China
+
+:China a owl:NamedIndividual , :Asia .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Coaching
+
+:Coaching a owl:NamedIndividual , :ManagingSkill .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Coding
+
+:Coding a owl:NamedIndividual , :ComputerScience .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#ComputerNetworking
+
+:ComputerNetworking a owl:NamedIndividual , :ComputerScience .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#England
+
+:England a owl:NamedIndividual , :Europe .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Finance
+
+:Finance a owl:NamedIndividual , :Economics .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Finland
+
+:Finland a owl:NamedIndividual , :Europe .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#FulltimeStudent
+
+:FulltimeStudent a owl:NamedIndividual , :TypeOfEmployment .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Germany
+
+:Germany a owl:NamedIndividual , :Europe .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Google
+
+:Google a owl:NamedIndividual , :SoftwareCompany .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Inspiring
+
+:Inspiring a owl:NamedIndividual , :ManagingSkill .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#JAMK
+
+:JAMK a owl:NamedIndividual , :University .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#JYU
+
+:JYU a owl:NamedIndividual , :University .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Japan
+
+:Japan a owl:NamedIndividual , :Asia .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#JyvaskylaHospital
+
+:JyvaskylaHospital a owl:NamedIndividual , :Hospital .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#JyvaskylanKoulu
+
+:JyvaskylanKoulu a owl:NamedIndividual , :School .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Microsoft
+
+:Microsoft a owl:NamedIndividual , :SoftwareCompany .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Nordea
+
+:Nordea a owl:NamedIndividual , :Bank .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#OP
+
+:OP a owl:NamedIndividual , :Bank .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Panda
+
+:Panda a owl:NamedIndividual , :Factory .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Singing
+
+:Singing a owl:NamedIndividual , :Education .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Supervising
+
+:Supervising a owl:NamedIndividual , :ManagingSkill .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Teaching
+
+:Teaching a owl:NamedIndividual , :Education .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#USA
+
+:USA a owl:NamedIndividual , :American .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Unemployed
+
+:Unemployed a owl:NamedIndividual , :TypeOfEmployment .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Vietnam
+
+:Vietnam a owl:NamedIndividual , :Asia .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Worker
+
+:Worker a owl:NamedIndividual , :TypeOfEmployment .
+# 
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Jim
+
+:Jim a owl:NamedIndividual , :UnderagePerson ;
+	:hasNationality :Germany ;
+	:isLivingIn :Germany ;
+	:hasName "Jimmy Hendrix"^^xsd:string ;
+	:hasAge "12"^^xsd:integer ;	
+	:hasParent :Mary , :Eric ;
+	:isMale "true"^^xsd:boolean .
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Anna
+
+:Anna a owl:NamedIndividual , :UnderagePerson ;
+	:isLivingIn :Germany ;
+	:hasNationality :China ;	
+	:hasName "Anna Annabelle"^^xsd:string ;	
+	:hasAge "3"^^xsd:integer ;
+	:hasParent :Mary , :Eric ;
+	:isMale "false"^^xsd:boolean .	
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Eric
+
+:Eric a owl:NamedIndividual , :WorkingAgePerson ;
+	:hasChildren :Jim , :Anna ;
+	:hasSpouse :Mary ;	
+	:hasNationality :Finland ;
+	:isLivingIn :Germany ;
+	:hasSkill :Supervising , :Inspiring ;	
+	:isWorkingAt :Panda ;
+	:hasAge "42"^^xsd:integer ;
+	:hasName "Eric Clapton"^^xsd:string ;
+	:isMale "true"^^xsd:boolean .
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Mary
+
+:Mary a owl:NamedIndividual , :WorkingAgePerson ;
+	:hasChildren :Jim , :Anna ;
+	:hasParent :Bill , :Maria ;
+	:hasSpouse :Eric ;	
+	:hasNationality :China ;
+	:isLivingIn :Germany ;
+	:hasSkill :Supervising , :Inspiring ;	
+	:isWorkingAt :Nordea ;
+	:hasAge "38"^^xsd:integer ;
+	:hasName "Mary Jane"^^xsd:string ;
+	:isMale "false"^^xsd:boolean .
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Jack
+
+:Jack a owl:NamedIndividual , :UnderagePerson ;
+	:hasParent :Tom , :Jane ;
+	:isLivingIn :Finland ;
+	:hasNationality :Finland ;	
+	:hasName "Jack Sparrow"^^xsd:string ;	
+	:hasAge "4"^^xsd:integer ;
+	:isMale "true"^^xsd:boolean .	
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Jane
+
+:Jane a owl:NamedIndividual , :WorkingAgePerson ;
+	:hasChildren :Jack ;
+	:hasSpouse :Tom ;
+	:hasName "Jane Sparrow"^^xsd:string ;	
+	:isLivingIn :Finland ;
+	:hasNationality :Finland ;
+	:hasAge "33"^^xsd:integer ;
+	:isWorkingAt :JyvaskylanKoulu ;
+	:hasSkill :Caring , :Singing;
+	:isMale "false"^^xsd:boolean .	
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Tom
+
+:Tom a owl:NamedIndividual , :WorkingAgePerson ;
+	:hasChildren :Jack ;
+	:hasParent :Bill , :Maria ;	
+	:hasSpouse :Jane ;
+	:hasNationality :USA ;
+	:hasSkill :Coding ;
+	:isLivingIn :Finland ;
+	:isWorkingAt :Google ;
+	:hasAge "31"^^xsd:integer ;
+	:hasName "Tom Sparrow"^^xsd:string ;
+	:isMale "true"^^xsd:boolean .		
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Bill
+
+:Bill a owl:NamedIndividual , :RetiredAgePerson ;
+	:hasChildren :Tom , :Mary ;
+	:hasSpouse :Maria ;
+	:hasNationality :USA ;
+	:hasSkill :Coding;
+	:isLivingIn :Japan ;	
+	:hasAge "78"^^xsd:integer ;
+	:hasName "Bill Gates"^^xsd:string ;
+	:isMale "true"^^xsd:boolean .	
+#
+# http://users.jyu.fi/~miduleph/TIES452/FinalAssignment.owl#Maria
+
+:Maria a owl:NamedIndividual , :RetiredAgePerson ;
+	:hasChildren :Tom , :Mary ;
+	:hasSpouse :Bill ;
+	:hasNationality :Japan ;
+	:hasSkill :Caring , :Teaching ;
+	:isLivingIn :Japan ;
+	:hasAge "69"^^xsd:integer ;
+	:hasName "Maria Ozawa"^^xsd:string ;
+	:isMale "false"^^xsd:boolean .		
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid37 a owl:AllDisjointClasses ;
+	owl:members _:genid40 .
+
+_:genid40 a rdf:List ;
+	rdf:first :RetiredAgePerson ;
+	rdf:rest _:genid39 .
+
+_:genid39 a rdf:List ;
+	rdf:first :UnderagePerson ;
+	rdf:rest _:genid38 .
+
+_:genid38 a rdf:List ;
+	rdf:first :WorkingAgePerson ;
+	rdf:rest rdf:nil .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Rules
+# #
+# #################################################################
+# 
+# 
+
+:a a <http://www.w3.org/2003/11/swrl#Variable> .
+
+:b a <http://www.w3.org/2003/11/swrl#Variable> .
+
+_:genid41 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+	rdfs:comment ""^^xsd:string ;
+	rdfs:label "Children"^^xsd:string ;
+	a <http://www.w3.org/2003/11/swrl#Imp> ;
+	<http://www.w3.org/2003/11/swrl#body> _:genid44 .
+
+_:genid44 a <http://www.w3.org/2003/11/swrl#AtomList> ;
+	rdf:first _:genid45 .
+
+_:genid45 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+	<http://www.w3.org/2003/11/swrl#classPredicate> :Person ;
+	<http://www.w3.org/2003/11/swrl#argument1> :a .
+
+_:genid44 rdf:rest _:genid42 .
+
+_:genid42 a <http://www.w3.org/2003/11/swrl#AtomList> ;
+	rdf:first _:genid43 .
+
+_:genid43 a <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+	<http://www.w3.org/2003/11/swrl#propertyPredicate> :hasAge ;
+	<http://www.w3.org/2003/11/swrl#argument1> :a ;
+	<http://www.w3.org/2003/11/swrl#argument2> :b .
+
+_:genid42 rdf:rest rdf:nil .
+
+_:genid41 <http://www.w3.org/2003/11/swrl#head> rdf:nil .
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi

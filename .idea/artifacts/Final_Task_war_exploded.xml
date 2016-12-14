@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Final_Task:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Final_Task_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Final_Task/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Final_Task" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.semarglproject:semargl-rdfa:0.7" />
+          <element id="library" level="project" name="org.semarglproject:semargl-core:0.7" />
+          <element id="library" level="project" name="org.semarglproject:semargl-jena:0.7" />
+          <element id="library" level="project" name="com.github.ansell.pellet:pellet-jena:2.3.3" />
+          <element id="library" level="project" name="com.hp.hpl.jena:arq:2.8.8" />
+          <element id="library" level="project" name="org.apache.jena:jena-tdb:3.1.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

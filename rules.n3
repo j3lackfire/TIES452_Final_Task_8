@@ -1,0 +1,9 @@
+@prefix : http://users.jyu.fi/~miduleph/TIES452/Individuals.owl# 
+@prefix onto: http://users.jyu.fi/~miduleph/TIES452/Final_Assignment.owl# 
+
+[(
+	?children onto:hasParent ?parent  )( 
+	?parent onto:hasNationality ?country ) -> (
+
+	?children onto:hasNationality ?country
+) ]
